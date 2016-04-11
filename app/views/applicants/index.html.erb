@@ -1,0 +1,52 @@
+<h1>Listing applicants</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>Name</th>
+      <th>Fname</th>
+      <th>Address</th>
+      <th>Dob</th>
+      <th>Contact</th>
+      <th>Edu</th>
+      <th>Applicant Comment</th>
+      <% if session[:user_id]  %>
+        <th>User Comments</td>
+      <% end %>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <td><%= applicant.username %></td>
+        <td><%= applicant.name %></td>
+        <td><%= applicant.fname %></td>
+        <td><%= applicant.address %></td>
+        <td><%= applicant.dob %></td>
+        <td><%= applicant.contact %></td>
+        <td><%= applicant.edu %></td>
+        <td><%= applicant.comment %></td>
+        <% if session[:user_id]  %>
+          <td>
+            <% applicant.comments.each do |applicant_comments| %>
+              <%= applicant_comments.comment %>
+            <% end %>
+          </td>
+        <% end %>
+        <td><%= link_to 'Show', applicant %></td>
+        <td><%= link_to 'Edit', edit_applicant_path(applicant) %></td>
+        <td><%= link_to 'Destroy', applicant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to "<i class='glyphicon glyphicon-plus-sign'></i> New Applicant".html_safe, new_applicant_path, :class => "btn btn-success", :style => "color:white;" %>

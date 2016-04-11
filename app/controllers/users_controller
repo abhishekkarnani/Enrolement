@@ -1,0 +1,10 @@
+class UsersController < ApplicationController
+	def checkusername
+	  if Applicant.where('username = ?', params[:username]).count == 0
+	    render :nothing => true, :status => 200
+	  else
+	    render :nothing => true, :status => 409
+	  end
+	  return
+	end
+end	

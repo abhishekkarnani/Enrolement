@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enrolment</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if session[:user_id] %>
+	<%= link_to "<i class='glyphicon glyphicon-log-out'></i> Logout".html_safe, {:controller => 'admin', :action => 'logout'}, :class => "btn btn-primary pull-right", :style => "color: white; margin-right: 30px;  margin-top: 10px;" %>
+<% end %>
+<%= yield %>
+</body>
+</html>

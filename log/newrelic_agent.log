@@ -1,0 +1,17 @@
+# Logfile created on 2014-05-24 00:24:07 +0530 by logger.rb/44203
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Starting the New Relic agent in "development" environment.
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Reading configuration from config/newrelic.yml
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : New Relic Agent Developer Mode enabled.
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Environment: development
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Dispatcher: webrick
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Application: My Application
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] WARN : Agent configured not to send data in this environment.
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Installing ActiveRecord 4 instrumentation
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Installing Net instrumentation
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Installing deferred Rack instrumentation
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Installing Rails 4 Controller instrumentation
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Installing Rails 4 view instrumentation
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Installing Rails4 Error instrumentation
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Finished instrumentation
+[05/24/14 00:24:07 +0530 Amits-MacBook-Air.local (14298)] INFO : Doing deferred dependency-detection before Rack startup

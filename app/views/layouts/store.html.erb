@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Application Enrolment</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+</head>
+<body id="store">
+  <%= yield %>
+  <!-- Layout -->
+
+  <div id="columns">
+
+    <!-- Side Bar -->
+    <div id="side">
+      <% if session[:user_id] %>
+        <%= link_to 'Users', :controller => 'users' %><br />
+        <br />
+        <%= link_to 'Logout', :controller => 'admin', :action => 'logout' %>
+      <% end %>
+
+    </div>
+    <!-- END Sidebar -->
+
+    <!-- Main Page -->
+    <div id="main">
+      <% if flash[:notice] -%>
+        <div id="notice">
+          <%= flash[:notice] %>
+        </div>
+      <% end -%>
+      <%= @content_for_layout %>
+    </div>
+    <!-- END Main Page -->
+
+  </div>
+
+  <!-- END Layout -->
+
+  </body>
+</html>

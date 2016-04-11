@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-sm-12">
+    <%= simple_form_for(@applicant) do |f| %>
+      <% if @applicant.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@applicant.errors.count, "error") %> prohibited this applicant from being saved:</h2>
+
+          <ul>
+          <% @applicant.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-md-2"><%= f.label :username %></div>
+          <div class="col-md-10">
+            <%= f.text_field(:username, :'data-validate' => '/applicants/checkusername', :id => @applicant.id) %>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-md-2"><%= f.label :name %></div>
+          <div class="col-md-10"><%= f.text_field :name %></div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-md-2"><%= f.label :fname %></div>
+          <div class="col-md-10"><%= f.text_field :fname %></div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-md-2"><%= f.label :address %></div>
+          <div class="col-md-10"><%= f.text_area :address %></div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-md-2"><%= f.label :dob %></div>
+          <div class="col-md-10"><%= f.text_field :dob %></div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-md-2"><%= f.label :contact %></div>
+          <div class="col-md-10"><%= f.text_field :contact %></div>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-md-2"><%= f.label :edu %></div>
+          <div class="col-md-10"><%= f.text_field :edu %></div>
+        </div>
+      </div>
+      <br/>
+
+      <% if session[:user_id] %>
+        <%= f.fields_for :comments  do |c| %>
+          <div class="col-md-2"><%= c.label :comment %></div>
+          <div class="col-md-10"><%= c.text_area :comment %></div>
+        <% end %>
+      <% else %>
+        <div class="col-md-2"><%= f.label :comment %></div>
+        <div class="col-md-10"><%= f.text_field :comment %></div>
+      <% end %>
+      <br/><br/><br/>
+      <div class="form-action" style="margin-left: 254px;">
+        <%= f.submit  "Create Applicant", :class => "btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>
